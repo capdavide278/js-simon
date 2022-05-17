@@ -14,6 +14,7 @@ let numeri = document.getElementById("numeri");
 let numeroGiocatore;
 
 
+
 //inserire numeri random in pagina
 for (let i = 0; i < 5; i++) {
 
@@ -44,7 +45,7 @@ const counting = setInterval(
             const divAttesa = document.getElementById("tempo_attesa");
             
             //imposto il tempo prima di riscirvere i numeri
-            let tempo = 30;
+            let tempo = 3;
             const counting2 = setInterval(
             function () {
                 divAttesa.innerHTML = tempo;
@@ -58,14 +59,15 @@ const counting = setInterval(
                     for (let i = 0; i < 5; i++) {
 
                         //chiedo i numeri inseriti
-                        numeroG = parseInt(prompt("inserisci uno dei numeri visti precedentemente"));
-                        let presenza = array_Casuale.includes(numeroG);
+                        numeroGiocatore = parseInt(prompt("inserisci uno dei numeri visti precedentemente"));
+                        
+                        let presenza = array_Casuale.includes(numeroGiocatore);
                         console.log(presenza);
                         if (presenza == true) {
-                            console.log("Bravo " + numeroG + " è uno dei numeri visti precedentemente");
+                            console.log("Bravo " + numeroGiocatore + " è presente nei numeri visti.");
 
                         } else {
-                            console.log("hai sbagliato " + numeroG + " non è uno dei numeri visti");
+                            console.log("hai sbagliato " + numeroGiocatore + " non presente nei numeri visti.");
                         }
                     }
                 } else {
