@@ -33,20 +33,31 @@ const counting = setInterval(
     function () {
         Elemento_tempo.innerHTML = secondi;
         if (secondi === 0) {
+
+            //cosi i numeri generati random scompaiono 
             numeri.style.display = 'none';
             clearInterval(counting);
+
+            //i 5 secondi per memorizzare scompaiono
             tempo_memorizzazione.style.display = 'none';
-            const divAttesa = document.getElementById("tempo_attesa")
-            let tempo = 10;
+
+            const divAttesa = document.getElementById("tempo_attesa");
+            
+            //imposto il tempo prima di riscirvere i numeri
+            let tempo = 30;
             const counting2 = setInterval(
             function () {
                 divAttesa.innerHTML = tempo;
                 if (tempo === 0) {
+
+                    //faccio scomparire i numeri e i 30 secondi
                     numeri.style.display = 'none';
                     tempo_attesa.style.display = 'none';
                     clearInterval(counting2);
 
                     for (let i = 0; i < 5; i++) {
+
+                        //chiedo i numeri inseriti
                         numeroG = parseInt(prompt("inserisci uno dei numeri visti precedentemente"));
                         let presenza = array_Casuale.includes(numeroG);
                         console.log(presenza);
