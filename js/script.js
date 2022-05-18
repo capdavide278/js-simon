@@ -32,6 +32,7 @@ let secondi = 5;
 
 const counting = setInterval(
     function () {
+        let score = 0;
         Elemento_tempo.innerHTML = secondi;
         if (secondi === 0) {
 
@@ -65,11 +66,12 @@ const counting = setInterval(
                         console.log(presenza);
                         if (presenza == true) {
                             console.log("Bravo " + numeroGiocatore + " è presente nei numeri visti.");
-
+                            score ++;
                         } else {
                             console.log("hai sbagliato " + numeroGiocatore + " non presente nei numeri visti.");
                         }
                     }
+                    console.log("il tuo punteggio è: "+score);
                 } else {
                     tempo--;
                 }
